@@ -1,0 +1,11 @@
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                       controllers.Assets.versioned(path="/public", file: Asset)
+
+
+# first database connection test
+GET     /first/set/:str                     controllers.CheckFind.setS1(str : String)
+GET     /first/get                          controllers.CheckFind.getS1(message : String="")
+
+# second database connection test
+GET     /second/set/:str                    controllers.CheckFind.setS2(str : String)
+GET     /second/get                         controllers.CheckFind.getS2(message : String="")
