@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 import com.avaje.ebean.Model;
 
-@Entity()
+@Entity
 public class SampleTable2 extends Model {
 
 	@Id
