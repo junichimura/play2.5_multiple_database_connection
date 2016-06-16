@@ -33,6 +33,16 @@ public class CheckFind extends Controller {
 		return ok(sb.toString());
 	}
 
+	public Result updateS1(int id, String updStr){
+		SampleTable1 s = SampleTable1.find.byId(id);
+
+		String before = s.sampleTable1Value;
+		s.sampleTable1Value = updStr;
+		s.save();
+
+		return getS1(String.format("[Info] (id: %s) %s -> %s\n", s.sampleTable1Id, before, s.sampleTable1Value));
+	}
+
 	public Result setS2(String str){
 
 		SampleTable2 s = new SampleTable2();
@@ -55,4 +65,15 @@ public class CheckFind extends Controller {
 		}
 
 		return ok(sb.toString());
-	}}
+	}
+
+	public Result updateS2(int id, String updStr){
+		SampleTable2 s = SampleTable2.find.byId(id);
+
+		String before = s.sampleTable2Value;
+		s.sampleTable2Value = updStr;
+		s.save();
+
+		return getS2(String.format("[Info] (id: %s) %s -> %s\n", s.sampleTable2Id, before, s.sampleTable2Value));
+	}
+}

@@ -3,8 +3,6 @@ package models.first;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import com.avaje.ebean.Model;
-
 @Entity
 public class SampleTable1 extends Model {
 
@@ -13,6 +11,6 @@ public class SampleTable1 extends Model {
 
 	public String sampleTable1Value;
 
-	public static Find<Integer, SampleTable1> find = new Find<Integer, SampleTable1>(){};
+	public static Find<Integer, SampleTable1> find = new Find<Integer, SampleTable1>(Model.server, SampleTable1.class){};
 
 }

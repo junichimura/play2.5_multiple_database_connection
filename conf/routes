@@ -5,7 +5,9 @@ GET     /assets/*file                       controllers.Assets.versioned(path="/
 # first database connection test
 GET     /first/set/:str                     controllers.CheckFind.setS1(str : String)
 GET     /first/get                          controllers.CheckFind.getS1(message : String="")
+GET     /first/update/:id/:str              controllers.CheckFind.updateS1(id : Int, str : String)
 
 # second database connection test
 GET     /second/set/:str                    controllers.CheckFind.setS2(str : String)
 GET     /second/get                         controllers.CheckFind.getS2(message : String="")
+GET     /second/update/:id/:str             controllers.CheckFind.updateS2(id : Int, str : String)
